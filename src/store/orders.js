@@ -34,6 +34,15 @@ const actions = {
 				searchterm = payload.searchTerm
 			}
 
+			if(payload.orderDates.length > 0){ //not empty
+				if(payload.orderDates[0] != null){
+					fromdate = payload.orderDates[0]
+				}
+				if(payload.orderDates[1] != null){
+					todate = payload.orderDates[1]
+				}
+			}
+
 			api.get('http://localhost:8080/orders',{
             		params: {
             			offset: offset,

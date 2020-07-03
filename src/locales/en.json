@@ -51,5 +51,6 @@
   "totalAmount": "Total Amount",
   "resetSearch": "Reset",
   "search": "Search",
-  "searchTerm": "Search term"
+  "searchTerm": "Search term",
+  "orderDateRange": "From Date - To Date "
 }
