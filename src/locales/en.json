@@ -48,5 +48,8 @@
   "customerName": "Customer Name",
   "orderDate": "Order Date",
   "deliveredAmount": "Delivered Amount",
-  "totalAmount": "Total Amount"
+  "totalAmount": "Total Amount",
+  "resetSearch": "Reset",
+  "search": "Search",
+  "searchTerm": "Search term"
 }

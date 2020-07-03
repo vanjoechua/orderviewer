@@ -7,7 +7,7 @@ const namespaced = {
 
 const state = {
   Orders: [],
-  totalOrders: 0,
+  TotalOrders: 0,
 }
 
 const getters = {
@@ -17,21 +17,37 @@ const getters = {
 const mutations = {
     setOrders (state, payload) {
       state.Orders = payload?.Orders
-      state.totalOrders = payload?.TotalOrders
+      state.TotalOrders = payload?.TotalOrders
     },
   updateField,
 }
 
 const actions = {
-    getAllOrders ({ commit }) {
+    getAllOrders ({ commit }, payload) {
         return new Promise((resolve, reject) => {
-            api.get('/orders').then((response) => {
-                    commit('setOrders',response.data)
+            let offset = (payload.tableOptions.page - 1) * payload.tableOptions.itemsPerPage
+			let searchterm = ''
+			let fromdate = ''
+			let todate = ''
+
+			if(payload.searchTerm != null){
+				searchterm = payload.searchTerm
+			}
+
+			api.get('http://localhost:8080/orders',{
+            		params: {
+            			offset: offset,
+						searchterm: searchterm,
+						fromdate: fromdate,
+						todate: todate,
+					}
+				}).then((response) => {
+                    commit('setOrders', response.data)
                     resolve('done')
                 }).catch((error) => {
                     reject(error)
                 }).finally(() => {
-
+                    resolve('done')
                 })
         })
     },
