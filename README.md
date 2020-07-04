@@ -19,4 +19,4 @@ Steps to install this test application
 Open your browser and access this URL:
 http://localhost:8081/orders
 
-![Screenshot](https://www.dropbox.com/s/9oeg2sefzh8hqhu/Capture%202020-07-04_1.PNG?dl=0)
+![Screenshot](https://github.com/vanjoechua/orderviewer/blob/master/public/Capture%202020-07-04_1.PNG)
