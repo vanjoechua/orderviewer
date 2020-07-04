@@ -15,3 +15,6 @@ npm install
 
 4. Run application
 npm run dev
+
+Open your browser and access this URL:
+http://localhost:8081/orders
